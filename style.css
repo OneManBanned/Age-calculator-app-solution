@@ -1,0 +1,216 @@
+:root {
+    /* Colors */
+
+    --purple: hsl(259, 100%, 65%);
+    --red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --offWhite: hsl(0, 0%, 94%);
+    --lightGrey: hsl(0, 0%, 86%);
+    --smokeyGrey: hsl(0, 1%, 44%);
+    --offBlack: hsl(0, 0%, 8%);
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Mobile */
+
+body {
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 94%);
+    padding: 1rem;
+}
+
+main {
+    background-color: var(--white);
+    margin-top: 4rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    border-bottom-right-radius: 6.5rem;
+    position: relative;
+}
+
+form {
+    border-bottom: 1px solid var(--lightGrey);
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+legend {
+    visibility: hidden;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    min-width: 100%;
+    gap: 5%;
+}
+
+fieldset div {
+    display: flex;
+    flex-direction: column;
+    width: calc(90% / 3);
+}
+
+fieldset label {
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: var(--smokeyGrey);
+    letter-spacing: .15rem;
+    margin-bottom: .25rem;
+}
+
+fieldset input {
+    min-height: 3.25rem;
+    border: 1px solid var(--lightGrey);
+    border-radius: .5rem;
+    font-size: 1.25rem;
+    padding-left: .75rem;
+    color: var(--offBlack);
+    caret-color: var(--purple);
+}
+
+input::placeholder {
+    color: var(--smokeyGrey);
+}
+
+fieldset span {
+    margin-top: .5rem;
+    font-size: .7rem;
+    color: var(--red);
+}
+
+
+button {
+    border-radius: 50%;
+    height: 4rem;
+    aspect-ratio: 1;
+    border: none;
+    background: center center var(--purple) no-repeat;
+    background-image: url('./assets/images/icon-arrow.svg');
+    background-size: 40%;
+    position: absolute;
+    left: calc(50% - 2rem);
+    bottom: -20%;
+}
+
+.dateDisplay {
+    max-width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    color: var(--offBlack);
+    font-size: clamp(1rem, 13vw, 6rem);
+    margin-block: -.5rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+p span {
+    color: var(--purple);
+    font-weight: 800;
+}
+
+/* Desktop */
+
+@media (min-width: 45.313rem) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form {
+        padding-bottom: 1rem;
+    }
+
+    main {
+        width: clamp(64%, 52.5rem, 98.5%);
+        margin-top: 0;
+        padding-inline: 3.5rem;
+    }
+
+    fieldset {
+        padding-bottom: 1.5rem;
+        margin-top: .5rem;
+        gap: 2.5%;
+    }
+
+    fieldset div {
+        max-width: 24%;
+    }
+
+    fieldset label {
+        padding-bottom: .2rem;
+        font-size: .85rem;
+        letter-spacing: .25rem;
+    }
+
+    fieldset input {
+        margin-right: 1rem;
+        height: min(4.5rem);
+        font-size: 2rem;
+    }
+
+    input::-webkit-inner-spin-button {
+        appearance: none;
+    }
+
+    input:active,
+    input:focus {
+        outline: 2px solid var(--purple);
+        outline-offset: .25rem;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: var(--offBlack);
+        cursor: pointer;
+    }
+
+    button:focus {
+        outline: 2px solid var(--purple);
+        outline-offset: .25rem;
+        background-color: var(--offBlack);
+    }
+
+    button {
+        left: calc(100% - 6rem);
+        bottom: -3rem;
+        height: 6rem;
+    }
+
+    fieldset span {
+        margin-top: .55rem;
+        font-size: .85rem;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: .5rem;
+    }
+
+    .dateDisplay {
+        padding-top: 3rem;
+    }
+
+    p {
+        font-size: 6.5rem;
+        margin-block: -1.25rem;
+    }
+}
+
+/* Utilities */
+
+.flex {
+    display: flex;
+}
